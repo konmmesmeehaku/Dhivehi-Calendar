@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dhivehi Calendar 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+              thaana: ['Faruma', 'Noto Sans Thaana', 'sans-serif'],
+              waheed: ['MV Waheed', 'Faruma', 'sans-serif'],
+            },
+            colors: {
+              // Custom Palette
+              grass: { DEFAULT: '#2BB39B', 50: '#EAF8F5', 100: '#D5F6EF', 600: '#219681' },
+              sky: { DEFAULT: '#82B3E1', 50: '#F2F8FC', 100: '#E4F1FB', 600: '#5A9BD6' },
+              candy: { DEFAULT: '#F5B5CC', 50: '#FEF8FA', 100: '#FDEBF2', 600: '#F08CB0' },
+              crayon: { DEFAULT: '#EB5E5A', 50: '#FDF2F2', 100: '#FAE0DE', 600: '#E03E39' },
+              sun: { DEFAULT: '#FBB92A', 50: '#FFFDF5', 100: '#FFF7E0', 600: '#E5A010' },
+              star: { DEFAULT: '#FAF5EE', 50: '#FFFFFF', 100: '#FBF7F2', 900: '#8C867D' },
+              
+              // Dark Mode Mappings
+              charcoal: '#1A1A1A', // Main background in dark mode
+              darkgrey: '#2D2D2D', // Card background in dark mode
+              mutedcyan: '#4DD0E1', // Teal replacement
+              navy: '#1E293B', // Deep Navy for Prayer Card
+              
+              slate: {
+                750: '#2D2D2D', // Custom card bg
+                800: '#1e293b', 
+                850: '#1A1A1A', // Custom body bg
+                900: '#0f172a',
+              }
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(43, 179, 155, 0.08), 0 2px 10px -2px rgba(43, 179, 155, 0.04)',
+              'card': '0 10px 30px -5px rgba(130, 179, 225, 0.15)',
+              'glow': '0 0 15px rgba(251, 185, 42, 0.3)',
+            },
+            height: {
+              'dvh': '100dvh'
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Thaana:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Faruma';
+        src: url('https://cdn.jsdelivr.net/gh/fawazahmed0/dhivehi-fonts@master/Faruma/Faruma.woff2') format('woff2'),
+             url('https://cdn.jsdelivr.net/gh/fawazahmed0/dhivehi-fonts@master/Faruma/Faruma.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'MV Waheed';
+        src: url('https://cdn.jsdelivr.net/gh/fawazahmed0/dhivehi-fonts@master/MvWaheed/MvWaheed.woff2') format('woff2'),
+             url('https://cdn.jsdelivr.net/gh/fawazahmed0/dhivehi-fonts@master/MvWaheed/MvWaheed.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      :root {
+          --font-eng: 'Poppins', sans-serif;
+          --font-dv-header: 'MV Waheed', 'Faruma', 'Noto Sans Thaana', sans-serif;
+          --font-dv-body: 'Faruma', 'Noto Sans Thaana', sans-serif;
+      }
+
+      body {
+        font-family: var(--font-eng);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: #FAF5EE; /* Star color */
+        overflow-y: scroll; /* Prevent layout shift */
+      }
+
+      .font-waheed {
+        font-family: var(--font-dv-header) !important;
+        line-height: 1.6;
+        direction: rtl;
+      }
+
+      .font-thaana {
+        font-family: var(--font-dv-body) !important;
+        line-height: 1.8; /* Generous height for fili */
+        padding-top: 4px; /* Prevent clipping */
+        letter-spacing: 0;
+      }
+
+      /* Fix for mobile text rendering */
+      @media (max-width: 640px) {
+        .font-thaana {
+          line-height: 1.6;
+        }
+      }
+
+      .calendar-grid-aspect {
+        aspect-ratio: 7 / 6;
+      }
+      
+      @media (max-width: 768px) {
+        .calendar-grid-aspect {
+          aspect-ratio: auto;
+        }
+      }
+      
+      /* Hide scrollbar for cleaner look in specific containers */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "clsx": "https://esm.sh/clsx@^2.1.1",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "tailwind-merge": "https://esm.sh/tailwind-merge@^3.4.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-star text-slate-800 antialiased dark:bg-slate-850 dark:text-slate-100 transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Dhivehi Calendar 2026",
+  "description": "A high-fidelity, RTL-native Dhivehi calendar application for 2026 featuring dual Gregorian-Hijri dates, public holiday tracking, and a responsive modern UI designed with a strict 8pt grid system.",
+  "requestFramePermissions": []
+}
